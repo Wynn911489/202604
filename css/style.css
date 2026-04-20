@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+TC:wght@100..900&family=Yusei+Magic&family=Zen+Kurenaido&family=Zen+Maru+Gothic&display=swap');
+
+body {
+    /* font-family: "Noto Sans TC", sans-serif; */
+    font-family: "Kiwi Maru", serif;
+}
+
+
+
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.title-01 {
+    font-size: 74px;
+    font-weight: 900;
+    color: var(--mycolor10);
+}
+
+.title-02 {
+    font-size: 74px;
+    font-weight: 500;
+    color: var(--mycolor08);
+    font-style: oblique;
+    text-shadow: 4px 4px 3px var(--mycolor11);
+    text-align: center;
+}
+
+.title-03 {
+    font-size: 72px;
+    font-weight: 600;
+    /* 加重一點點，撐起山青色的厚重感 */
+    color: var(--mycolor02);
+    font-style: oblique 8deg;
+    text-align: center;
+    letter-spacing: 6px;
+    /* 寬廣的間距更有山林的空間感 */
+
+    /* 質感陰影：像山間霧氣散開 */
+    text-shadow:
+        2px 2px 2px var(--mycolor12),
+        4px 4px 12px rgba(0, 83, 68, 0.3);
+    text-decoration: none;
+
+}
+
+.box {
+    border: 2px solid black;
+    border-radius: 5%;
+    box-shadow: 2px 2px 4px #2F4F4F;
+
+}

@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NULINE. | 極簡純淨護膚</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        
+</head>
+<style>
+    :root {
+    /* ===== 主色：深墨綠（品牌主色） ===== */
+    --primary: #1A3C34;
+    --primary-mid: #2D6A56;
+    --primary-light: #5A9E84;
+
+    /* ===== 輔色：奶霧米白（背景質感） ===== */
+    --cream: #F5F0E8;
+    --cream-dark: #E8E0D0;
+
+    /* ===== 金色系（點綴） ===== */
+    --gold: #C8A96E;
+    --gold-middle: #e3ded4;
+    --gold-light: #E8D5A8;
+    --gold-dark: #715f3e;
+
+    /* ===== 中性灰（文字、線條） ===== */
+    --ink: #1C1C1A;
+    --gray-mid: #7A7A72;
+    --gray-line: #D8D4CC;
+}
+
+body {
+    font-family: 'Inter', "Microsoft JhengHei", sans-serif;
+    color: var(--ink);
+    background-color: var(--cream-dark);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+.bg-cover {
+    background-position: center;
+    background-size: cover;
+}
+
+#s01 i {
+    color: var(--primary);
+    filter: drop-shadow(2px 4px 6px var(--gold-middle));
+}
+
+#s01 i:hover {
+    color: var(--gold);
+    filter: drop-shadow(2px 4px 6px var(--primary));
+}
+
+#s02 .navbar {
+    background-color: var(--gold-middle) !important;
+    border-bottom: 3px solid var(--gold);
+    font-weight: 600;
+}
+
+#s02 .navbar .dropdown:hover>.dropdown-menu {
+    display: block;
+    padding: 0;
+    font-weight: 900;
+}
+
+#s02 .dropdown-menu {
+    background-color: var(--cream);
+    border: 2px solid var(--gray-line);
+    border-radius: 8px;
+    width: 180px;
+}
+
+#s02 .dropdown-item {
+    color: var(--primary-mid);
+    font-size: 18px;
+    padding: 8px 20px;
+}
+
+#s02 .dropdown-item:hover {
+    background-color: var(--cream-dark);
+    color: var(--primary);
+    font-weight: bold;
+    border-bottom: 2px solid var(--gold);
+}
+
+#s02 .btn-outline-warning {
+    color: var(--gold);
+    border-color: var(--gold);
+    background-color: var(--cream);
+}
+
+#s02 .btn-outline-warning:hover {
+    background-color: var(--gold);
+    color: #fff;
+}
+
+#s02 .btn-outline-success {
+    color: #fff;
+    background-color: var(--primary);
+    border-color: var(--primary-mid);
+}
+
+#s02 .btn-outline-success:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-mid);
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-link.active {
+    color: var(--primary);
+
+}
+
+.nav-link:hover {
+    color: var(--primary);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 6px;
+    font-weight: bold;
+}
+
+.navbar-brand-text {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--primary) !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#s04 {
+    background:
+        linear-gradient(-20deg, rgba(200, 169, 110, 0.5) 20%, transparent 70%),
+        rgba(200, 169, 110, 0.5) 20%;
+}
+
+#s05 .timeline-section::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gold);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#s05 .timeline-section {
+    position: relative;
+    padding-bottom: 20px;
+    min-height: 100px;
+    /* 加這行 */
+}
+
+#s05 .timeline-section-pointer {
+    position: relative;
+
+}
+
+#s05 .timeline-section-pointer::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: var(--cream);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid var(--gold);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#s05 .timeline-section-pointer:hover::before {
+    width: 30px;
+    height: 30px;
+}
+
+
+#s06 .roller-b {
+    position: relative;
+    overflow: hidden;
+    /* 必須保留，遮住下方待命的捲軸 */
+    cursor: pointer;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+#s06 .roller-b:hover {
+    transform: translateY(-5px);
+}
+
+#s06 .roller-b .roller-b_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    background:
+        linear-gradient(0deg, rgba(200, 169, 110, 0.8) 20%, transparent 70%),
+        url(images/s08-bg.jpg) center 30% / cover;
+    backdrop-filter: blur(10px);
+    border-top: 2px solid var(--gold);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+        opacity 0.4s ease;
+    z-index: 2;
+}
+
+#s06 .roller-b:hover .roller-b_box {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+#s06 .roller-b i,
+#s06 .roller-b p {
+    transition: all 0.4s ease;
+}
+
+#s06 .roller-b:hover i {
+    transform: translateY(-20px) scale(0.9);
+    opacity: 0.3;
+}
+
+#s07 {
+    border-top: 2px solid var(--gold-dark);
+
+}
+
+
+#s07 .btn {
+    border: 1px solid var(--gold);
+    background-color: var(--gold-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 2px 4px 10px rgba(141, 118, 77, 0.8);
+}
+
+#s07 .btn:hover {
+    background-color: var(--gold-dark);
+    color: var(--cream);
+    border-color: var(--gold);
+    font-weight: bold;
+}
+
+
+#s08 {
+    background:
+        linear-gradient(0deg, rgba(200, 169, 110, 0.5) 20%, transparent 70%),
+        url(images/s08-bg.jpg) center 30% / cover;
+    padding: 60px 0;
+    border-top: 2px solid var(--gold-light);
+    border-bottom: 2px solid var(--gold-light);
+}
+
+#s08 .usering {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--gold);
+    flex-shrink: 0;
+    margin-right: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+#s08 .usering:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(200, 169, 110, 0.5);
+    border-color: var(--gold-dark);
+}
+
+#s09 {
+    background:
+        linear-gradient(0deg, var(--gold-light) 20%, transparent 70%),
+        rgba(200, 169, 110, 0.5) 20%;
+}
+
+#s09 .set {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--gray-line);
+    box-shadow: 2px 6px 20px rgba(141, 118, 77, 0.8);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    height: 100%;
+}
+
+#s09 .set:hover {
+    border-color: var(--gold-dark);
+    box-shadow: 2px 6px 20px rgba(141, 118, 77, 0.8);
+}
+
+#s10 {
+    background-color: var(--cream);
+    color: var(--ink);
+}
+
+
+#s10 h2 {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* 左側地圖標題 */
+#s10 .fs-3 {
+    background-color: var(--primary);
+    color: var(--gold-light);
+    border-radius: 8px 8px 0 0 !important;
+}
+
+#s10 .map-title {
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    background: none !important;
+}
+
+#s10 .map-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: var(--gold);
+}
+
+#s10 .map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 5px 5px 35px rgba(26, 60, 52, 0.35);
+    border: 1px solid var(--gray-line);
+    transition: transform 0.3s ease;
+}
+
+#s10 .form-check-input:checked {
+    background-color: var(--primary-mid);
+    border-color: var(--primary-mid);
+}
+
+#s10 .btn-submit {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(113, 95, 62, 0.2);
+}
+
+#s10 .btn-submit:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 20px rgba(113, 95, 62, 0.3);
+    color: var(--cream);
+}
+
+
+#s11 {
+    position: relative;
+    z-index: 1;
+}
+
+#s11 .section-title-box {
+    position: relative;
+    margin-bottom: 4rem;
+    margin-left: 60%;
+    z-index: 10;
+}
+
+
+#s11 .main-title {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 6px;
+    margin-bottom: 0;
+}
+
+
+#s11 .info-card {
+    background-color: rgba(26, 60, 52, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--gold);
+    color: #ffffff;
+    padding: 2.5rem;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+#s11 .job-name {
+    color: var(--gold-light);
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+#s11 .salary-box {
+    color: var(--cream);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#s11 .btn-outline-gold {
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    transition: 0.3s all ease;
+    text-decoration: none;
+    padding: 12px 0;
+}
+
+#s11 .btn-outline-gold:hover {
+    background-color: var(--gold) !important;
+    color: var(--primary) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+#s12 {
+    background-color: var(--primary);
+    border-bottom: 1px solid var(--gold);
+    padding: 12px 0;
+}
+
+#s12 .nav {
+    align-items: center;
+}
+
+#s12 .nav-link {
+    color: var(--cream);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    padding: 8px 20px;
+    display: inline-block;
+}
+
+#s12 .nav-link:hover {
+    opacity: 1;
+    color: var(--gold);
+    border-bottom: 3px solid var(--gold);
+    text-decoration: none;
+}
+
+/* 固定分隔線高度 */
+#s12 .separator {
+    color: var(--gold);
+    opacity: 0.5;
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+#s12 .social-box a {
+    text-decoration: none;
+    border: none;
+}
+
+#s12 .fa-brands {
+    color: var(--gold-light);
+    font-size: 1.8rem;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+}
+
+#s12 .fa-brands:hover {
+    color: var(--cream);
+    transform: translateY(-2px);
+}
+
+#s13 {
+    background-color: var(--gold-middle);
+    padding: 15px 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+#s13 .copyright {
+    color: var(--gold-dark);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    #s11 .section-title-box {
+        position: relative;
+        margin-bottom: 2rem;
+        margin-left: 50%;
+        z-index: 10;
+        text-align: left;
+
+    }
+
+    #s11 .main-title {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--primary);
+        letter-spacing: 4px;
+        white-space: nowrap;
+        display: block;
+    }
+
+    #s11 .recruit-bg-text {
+        font-size: 3.5rem;
+        top: -15px;
+        left: -5px;
+    }
+
+    #s11 .salary-box {
+        color: var(--cream);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+    }
+
+    #s12 .nav-link {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+
+    #s12 .fa-brands {
+        font-size: 1.5rem;
+        margin-left: 15px;
+    }
+}
+
+.line-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 9999;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+</style>
+
+<body>
+    <!-- ********************S01 懸浮icon 回頂部  ********************-->
+    <section id="s01">
+        <div class="container">
+            <div class="row">
+                <a href="#" id="back-to-top" class="text-decoration-none line-float "
+                    style="position: fixed; bottom: 20px; right: 20px; z-index: 99;opacity: 0; visibility: hidden;transition: opacity 0.3s ease, visibility 0.3s ease;">
+                    <i class="fa-solid fa-circle-up fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ********************S02 選單 ********************-->
+    <section id="s02">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <span class="navbar-brand-text mx-4 fs-4">NULINE. | 極簡純淨護膚</span>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5 ">
+                        <li class="nav-item ">
+                            <a class="nav-link active" aria-current="page" href="#">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#s06">品牌理念</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                產品系列
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Verda | 純淨守護</a></li>
+                                <li><a class="dropdown-item" href="#">Tensa | 賦活緊緻</a></li>
+                                <li><a class="dropdown-item" href="#">Hydra | 純萃清爽</a></li>
+                                <li><a class="dropdown-item" href="#">Aevum | 黃金逆時</a></li>
+                                <li><a class="dropdown-item" href="#">查看更多</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div>
+                        <button class="btn btn-outline-warning " data-bs-toggle="modal"
+                            data-bs-target="#registerModal">註冊</button>
+                        <button class="btn btn-outline-success " data-bs-toggle="modal"
+                            data-bs-target="#loginModal">登入</button>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!-- ********************S03 Carousel 幻燈片效果 ********************-->
+    <section id="s03">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active bg-cover"
+                    style="background-image: url(images/banner-green.jpg);height:100vh;">
+                    <div class="carousel-caption d-none d-md-block rounded-4 shadow-lg"
+                        style="background-color: rgba(245,240,232,0.5);backdrop-filter: blur(10px);color: #1A3C34;">
+                        <h5 class="display-5 fw-900">Verda Series</h5>
+                        <p class="fs-2">啟動植萃修護力，舒緩環境壓力，為敏弱肌建立強韌防禦牆。</p>
+                    </div>
+                </div>
+                <div class="carousel-item  bg-cover" style="background-image: url(images/banner-red.jpg);height:100vh">
+                    <div class="carousel-caption d-none d-md-block rounded-4 shadow-lg"
+                        style="background-color: rgba(245,240,232,0.5);backdrop-filter: blur(10px);color: #6b1c22;">
+                        <h5 class="display-5 fw-900">Tensa Series</h5>
+                        <p class="fs-2">精確上揚輪廓，收緊下垂線條，打造俐落立體的視覺維度。</p>
+                    </div>
+                </div>
+                <div class="carousel-item  bg-cover" style="background-image: url(images/banner-blue.jpg);height:100vh">
+                    <div class="carousel-caption d-none d-md-block rounded-4 shadow-lg"
+                        style="background-color: rgba(245,240,232,0.5);backdrop-filter: blur(10px);color: #29385d;">
+                        <h5 class="display-5 fw-900">Hydra Series</h5>
+                        <p class="fs-2">瞬化水珠滲透，釋放源源水分，維持全天候不黏膩的清透飽水。</p>
+                    </div>
+                </div>
+                <div class="carousel-item  bg-cover" style="background-image: url(images/banner-gold.jpg);height:100vh">
+                    <div class="carousel-caption d-none d-md-block rounded-4 shadow-lg"
+                        style="background-color: rgba(245,240,232,0.5);backdrop-filter: blur(10px);color: #6d5a29;">
+                        <h5 class="display-5 fw-900">Aevum Series</h5>
+                        <p class="fs-2">深層填補細紋，平滑歲月肌理，重現豐盈緊致的細緻膚質。</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+    <!-- ********************S04 量化的數字 ********************-->
+    <section id="s04" class="overflow-hidden" style="background-color: var(--cream);">
+        <div class="row align-items-center">
+            <div class="col-md-5 bg-cover d-none d-md-block"
+                style="background-image: url(images/s04-img.jpg); height: 600px;background-position: center; transition: 0.5s;">
+            </div>
+
+            <div class="col-md-7 px-lg-5 py-5">
+                <div class="text-uppercase tracking-widest text-secondary mb-2"
+                    style="letter-spacing: 3px; font-size: 0.9rem;font-weight: 900;">
+                    Scientific Care
+                </div>
+
+                <div class="h1 fw-bold mb-4">
+                    NULINE. 用 <span class="text-success wow animate__animated animate__fadeInUp" data-wow-delay="0.3s"
+                        style="display: inline-block;">可量化</span> 的標準，<br>
+                    定義護膚的純粹。
+                </div>
+
+                <div class="pe-md-5">
+                    <h3 class="fs-3 text-dark leading-relaxed mb-4" style="line-height: 1.8;">
+                        零下萃取。零酒精。零香精。零色素。
+                    </h3>
+                </div>
+                <div class="row mt-5 text-center justify-content-around">
+                    <div class="col-7 col-md-5 col-lg-2 mb-3 ">
+                        <div class="p-3 rounded-3 shadow border-0" style="background-color: var(--primary-mid); color: white;">
+                            <i class="fa-solid fa-flask fa-xl mb-2" style="color: var(--gold);"></i>
+                            <div class="h5 mt-2">原料篩選</div>
+                            <div><span class="h2 fw-bold counter">650</span><small>+種</small></div>
+                        </div>
+                    </div>
+                    <div class="col-7 col-md-5 col-lg-2 mb-3">
+                        <div class="p-3 rounded-3 shadow" style="background-color: var(--primary-mid); color: white;">
+                            <i class="fa-solid fa-snowflake fa-xl mb-2" style="color: var(--gold);"></i>
+                            <div class="h5 mt-2">零度冷萃</div>
+                            <div><span class="h2 fw-bold counter">1800</span><small>+時</small></div>
+                        </div>
+                    </div>
+                    <div class="col-7 col-md-5 col-lg-2 mb-3">
+                        <div class="p-3 rounded-3 shadow" style="background-color: var(--primary-mid); color: white;">
+                            <i class="fa-solid fa-microscope fa-xl mb-2" style="color: var(--gold);"></i>
+                            <div class="h5 mt-2">配方精研</div>
+                            <div><span class="h2 fw-bold counter">420</span><small>+次</small></div>
+                        </div>
+                    </div>
+                    <div class="col-7 col-md-5 col-lg-2 mb-3">
+                        <div class="p-3 rounded-3 shadow" style="background-color: var(--primary-mid); color: white;">
+                            <i class="fa-solid fa-heart fa-xl mb-2" style="color: var(--gold);"></i>
+                            <div class="h5 mt-2">有感見證</div>
+                            <div><span class="h2 fw-bold counter">2100</span><small>+人</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ********************S05 時間軸 派對流程 ********************-->
+    <section id="s05" class="bg-cover py-5"
+        style="background-image: url(images/s05-bg3.jpg);background-attachment: fixed;background-size: cover;">
+        <div class="container">
+            <div class="display-4 text-center my-3 fw-900 " style="color:var(--gold-dark);">研發歷程</div>
+            <div class="timeline-section">
+                <!-- 第一張 -->
+                <div class="row align-item-center mt-4 timeline-section-pointer justify-content-around">
+                    <div class="col-md-5 opacity-75 pt-4 rounded-3" style="background-color: var(--primary);">
+                        <div class="h2 fw-900 ps-3" style="color: var(--gold);">① 發現問題</div>
+                        <p class="  text-white p-3 fs-4">
+                            現代人的肌膚長期暴露在污染、壓力與過度保養之下，
+                            屏障功能悄悄崩潰。我們從上千份肌膚檢測報告出發，
+                            決心找出真正溫和而有效的護膚解方。
+                        </p>
+                    </div>
+                    <div class="col-md-5 d-none d-md-block">
+                        <img src="images/s05-01.jpg" alt="發現問題" class="img-fluid rounded-3 w-100"
+                            style="height:250px;object-fit:cover;">
+                    </div>
+                </div>
+                <!-- 第二張 -->
+                <div
+                    class="row align-item-center flex-row-reverse mt-4 timeline-section-pointer justify-content-around">
+                    <div class="col-md-5 opacity-75 pt-4 rounded-3" style="background-color: var(--primary)">
+                        <div class="h2 fw-900 ps-3" style="color: var(--gold);">② 原料溯源</div>
+                        <p class="text-white p-3 fs-4">
+                            深入北歐冰川與高山植萃產地，與12個國家的農場直接合作。
+                            我們只選用通過重金屬檢驗、農藥殘留符合歐盟標準的原料，
+                            從源頭守護每一滴精華的純淨。
+                        </p>
+                    </div>
+                    <div class="col-md-5 d-none d-md-block">
+                        <img src="images/s05-02.jpg" alt="原料溯源" class="img-fluid rounded-3 w-100"
+                            style="height:250px;object-fit:cover;">
+                    </div>
+                </div>
+                <!-- 第三張 -->
+                <div class="row align-items-center mt-4 timeline-section-pointer justify-content-around">
+                    <div class="col-md-5 opacity-75 pt-4 rounded-3" style="background-color: var(--primary)">
+                        <div class="h2 fw-900 ps-3" style="color: var(--gold);">③ 實驗室研發</div>
+                        <p class=" text-white p-3 fs-4">
+                            採用零下18°C 冷萃技術鎖住植物活性成分，
+                            搭配獨家奈米包覆技術，讓有效成分穿透角質層直達肌底，
+                            吸收率較傳統工法提升40%。
+                        </p>
+                    </div>
+                    <div class="col-md-5 d-none d-md-block">
+                        <img src="images/s05-03.jpg" alt="實驗室研發" class="img-fluid rounded-3  w-100"
+                            style="height:250px;object-fit:cover;object-position: center 65%;">
+                    </div>
+                </div>
+                <!-- 第四張 -->
+                <div
+                    class="row align-items-center flex-row-reverse mt-4 timeline-section-pointer justify-content-around">
+                    <div class="col-md-5 opacity-75 pt-4 rounded-3" style="background-color: var(--primary)">
+                        <div class="h2 fw-900 ps-3" style="color: var(--gold);">④ 配方穩定測試</div>
+                        <p class="text-white p-3 fs-4">
+                            每一款產品上市前須通過連續12個月的物化穩定測試，
+                            包含高溫、高濕、光照三大環境模擬，
+                            確保成分在保存期限內維持最高活性。
+                        </p>
+                    </div>
+                    <div class="col-md-5 d-none d-md-block">
+                        <img src="images/s05-04.jpg" alt="配方穩定測試" class="img-fluid rounded-3  w-100 "
+                            style="height:250px;object-fit:cover;">
+                    </div>
+                </div>
+                <!-- 第五張 -->
+                <div class="row align-items-center mt-4 timeline-section-pointer justify-content-around">
+                    <div class="col-md-5 opacity-75 pt-4 rounded-3" style="background-color: var(--primary)">
+                        <div class="h2 fw-900 ps-3" style="color: var(--gold);">⑤ 真人體驗回饋</div>
+                        <p class="text-white p-3 fs-4">
+                            邀請500位不同膚質的真實用戶進行8週盲測，
+                            蒐集超過3,000筆使用回饋，依據數據持續微調配方，
+                            讓產品真正貼近不同肌膚的需求。
+                        </p>
+                    </div>
+                    <div class="col-md-5 d-none d-md-block">
+                        <img src="images/s05-05.jpg" alt="真人體驗回饋" class="img-fluid rounded-3  w-100"
+                            style="height:250px;object-fit:cover;object-position:center 75%;">
+                    </div>
+                </div>
+                <!-- 第六張 -->
+                <div
+                    class="row align-items-center flex-row-reverse mt-4 timeline-section-pointer justify-content-around">
+                    <div class="col-md-5 opacity-75 pt-4 rounded-3" style="background-color: var(--primary)">
+                        <div class="h2 fw-900 ps-3" style="color: var(--gold);">⑥ 正式上市</div>
+                        <p class="text-white p-3 fs-4">
+                            歷時三年研發、九次配方修訂，NULINE. 終於誕生。
+                            結合「Null」(零、無添加) 與「Line」(生產線/基礎)，
+                            象徵回歸護膚的最基本、最純粹的基準線。
+                        </p>
+                    </div>
+                    <div class="col-md-5 d-none d-md-block">
+                        <img src="images/s05-06.png" alt="正式上市" class="img-fluid rounded-3 w-100"
+                            style="height:250px;object-fit:cover;">
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- ********************S06 企業精神 roller卷軸功能 ********************-->
+    <section id="s06" style="background-color: var(--primary);" class="py-5">
+        <div class="container">
+            <div class="h1 mt-2 mb-5 fw-900 text-center" style="color: var(--gold-light);">
+                品牌理念
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-md-3 text-center roller-b">
+                    <div class="roller-b_box">
+                        <div class="h1 fw-900 my-3 " style="color: var(--gold-dark);">純淨<br>
+                            <span class="fs-4 fw-normal text-white">是我們唯一的堅持</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-leaf fa-6x my-3" style="color: var(--gold-light);"></i>
+                    <p class="fs-5 text-white" style="border-top: 1px solid var(--gold); padding-top: 16px;">
+                        好的護膚品不需要複雜的成分，<br>
+                        只需要對肌膚誠實。
+                    </p>
+                </div>
+                <div class="col-md-3 text-center roller-b">
+                    <div class="roller-b_box">
+                        <div class="h1 fw-900 my-3" style="color: var(--gold-dark);">科學<br>
+                            <span class="fs-4 fw-normal text-white">讓美麗有所依據</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-flask fa-6x my-3" style="color: var(--gold-light);"></i>
+                    <p class="fs-5 text-white" style="border-top: 1px solid var(--gold); padding-top: 16px;">
+                        每一個配方都有數據支撐，<br>
+                        經得起皮膚科醫師的逐項檢驗。
+                    </p>
+                </div>
+                <div class="col-md-3 text-center roller-b">
+                    <div class="roller-b_box">
+                        <div class="h1 fw-900 my-3" style="color: var(--gold-dark);">透明<br>
+                            <span class="fs-4 fw-normal text-white">建立真實的信任</span>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-magnifying-glass fa-6x my-3" style="color: var(--gold-light);"></i>
+                    <p class="fs-5 text-white" style="border-top: 1px solid var(--gold); padding-top: 16px;">
+                        從原料產地到生產批號，<br>
+                        NULINE. 全程公開，<br>讓每一分錢花得安心。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ********************S07 理念介紹 對角線功能 ********************-->
+    <section id="s07" class="position-relative">
+        <div class="row">
+            <div class="col-md-5 position-absolute top-0 bottom-0 bg-cover "
+                style="background-image: url(images/s07-img.jpg);background-position:center 65%;"></div>
+            <div class="row justify-content-end px-0 mx-0">
+                <div class="col-md-7 px-0 mx-2">
+                    <div class="py-5 ps-5"
+                        style="background-color: rgba(245,240,232,0.75); backdrop-filter: blur(12px);">
+                        <div class="h1 my-3 fw-900 ms-5" style="color: var(--primary);">
+                            肌膚值得被溫柔對待
+                        </div>
+                        <div class="row align-items-end d-flex justify-content-around">
+                            <div class="col-8">
+                                <p class="fs-4 mb-0 ms-5 " style="color: var(--primary-mid);">
+                                    每個人的皮膚都有自己的節奏。<br>
+                                    NULINE. 不追求堆疊，只給肌膚真正需要的<br>
+                                    ——簡單、純淨、有感的日常守護。
+                                </p>
+                            </div>
+                            <div class="col-4 text-start">
+                                <button class="btn">
+                                    探索系列產品
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row ms-5 mt-5 justify-content-around">
+                            <div class="col-md-5">
+                                <div class="h2" style="color: var(--primary);">冷萃技術</div>
+                                <p class="fs-5" style="color: var(--ink);">
+                                    以零下低溫完整封存活性，<br>
+                                    讓肌膚感受最接近自然的修護。
+                                </p>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="h2" style="color: var(--primary);">零刺激配方</div>
+                                <p class="fs-5" style="color: var(--ink);">
+                                    敏感肌、孕婦、小朋友都能安心使用，<br>
+                                    全家一起好好照顧自己。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ********************S08 使用者分享 ********************-->
+    <section id="s08">
+        <div class="container">
+            <div class="display-5 text-center fw-900 mt-2 mb-4" style="color: var(--primary);">來自不同膚質的真實使用回饋</div>
+            <div class="row">
+
+                <div class="col-sm-6 col-xl-3 mt-3">
+                    <div class="d-flex">
+                        <img class="usering" src="images/04.jpg" alt="">
+                        <div>
+                            <div class="h4 fw-bold">陳小姐</div>
+                            <small style="color: var(--gray-mid);">敏感肌・使用3個月</small>
+                            <div style="color: var(--gold);">★★★★★</div>
+                            <p class="mt-2">第一次用完隔天起床臉不紅了，質地清爽完全不黏膩，連夏天都好推。</p>
+                            <small style="color: var(--primary-mid);">— Verda 純淨守護系列</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3 mt-3">
+                    <div class="d-flex">
+                        <img class="usering" src="images/04.jpg" alt="">
+                        <div>
+                            <div class="h4 fw-bold">林先生</div>
+                            <small style="color: var(--gray-mid);">油性肌・使用2個月</small>
+                            <div style="color: var(--gold);">★★★★★</div>
+                            <p class="mt-2">毛孔真的有變小，臉也比較不油了。成分表很乾淨讓我很放心。</p>
+                            <small style="color: var(--primary-mid);">— Hydra 純萃清爽系列</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3 mt-3">
+                    <div class="d-flex">
+                        <img class="usering" src="images/04.jpg" alt="">
+                        <div>
+                            <div class="h4 fw-bold">王媽媽</div>
+                            <small style="color: var(--gray-mid);">熟齡肌・使用5個月</small>
+                            <div style="color: var(--gold);">★★★★☆</div>
+                            <p class="mt-2">法令紋淡化了，臉看起來比較有光澤，老公說我年輕了好幾歲。</p>
+                            <small style="color: var(--primary-mid);">— Aevum 黃金逆時系列</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-xl-3 mt-3">
+                    <div class="d-flex">
+                        <img class="usering" src="images/04.jpg" alt="">
+                        <div>
+                            <div class="h4 fw-bold">吳小姐</div>
+                            <small style="color: var(--gray-mid);">混合肌・使用1個月</small>
+                            <div style="color: var(--gold);">★★★★★</div>
+                            <p class="mt-2">T字出油兩頰又乾，這款讓我整臉水潤又不悶，是目前用過最均衡的。</p>
+                            <small style="color: var(--primary-mid);">— Tensa 賦活緊緻系列</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ********************S09 呼應s07 對角線排版 收費方案介紹 ********************-->
+    <section id="s09" class="py-5" style="background-color: var(--cream);">
+        <div class="container">
+            <div class="display-5 text-start fw-900 mb-2" style="color: var(--primary);">精選組合推薦</div>
+            <p class="text-start mb-5" style="color: var(--gray-mid);">依膚質挑選，一次擁有完整護膚體驗</p>
+
+            <div class="row justify-content-center g-4">
+                <!-- 組合一 -->
+                <div class="col-md-4 d-flex">
+                    <div class="set w-100">
+                        <div class="bg-cover position-relative"
+                            style="background-image: url(images/banner-green.jpg); height: 200px;">
+                        </div>
+                        <div class="p-4" style="background-color: white;">
+                            <small class="badge mb-2" style="background-color: var(--primary);">敏感肌首選</small>
+                            <div class="h4 fw-bold" style="color: var(--primary);">Verda 純淨守護組</div>
+                            <p style="color: var(--gray-mid);">前導化妝水 + 舒緩精華 + 修護乳霜</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div>
+                                    <span class="text-decoration-line-through me-2"
+                                        style="color: var(--gray-mid);">NT$2,580</span>
+                                    <span class="h5 fw-bold" style="color: var(--primary);">NT$1,980</span>
+                                </div>
+                                <button class="btn btn-sm"
+                                    style="background-color: var(--primary); color: white;">立即選購</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 組合二 -->
+                <div class="col-md-4 d-flex">
+                    <div class="set w-100">
+                        <div class="bg-cover position-relative"
+                            style="background-image: url(images/banner-gold.jpg); height: 200px;">
+                            <span class="badge position-absolute top-0 end-0 m-2 fs-6"
+                                style="background-color: var(--gold);">熱銷No.1</span>
+                        </div>
+                        <div class="p-4" style="background-color: white;">
+                            <small class="badge mb-2" style="background-color: var(--gold);">熟齡肌推薦</small>
+                            <div class="h4 fw-bold" style="color: var(--primary);">Aevum 黃金逆時組</div>
+                            <p style="color: var(--gray-mid);">黃金精華露 + 緊緻眼霜 + 逆時乳霜</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div>
+                                    <span class="text-decoration-line-through me-2"
+                                        style="color: var(--gray-mid);">NT$3,980</span>
+                                    <span class="h5 fw-bold" style="color: var(--primary);">NT$2,980</span>
+                                </div>
+                                <button class="btn btn-sm"
+                                    style="background-color: var(--primary); color: white;">立即選購</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 組合三 -->
+                <div class="col-md-4 d-flex">
+                    <div class="set w-100">
+                        <div class="bg-cover position-relative"
+                            style="background-image: url(images/banner-blue.jpg); height: 200px;">
+                        </div>
+                        <div class="p-4" style="background-color: white;">
+                            <small class="badge mb-2" style="background-color: var(--primary-light);">油性肌推薦</small>
+                            <div class="h4 fw-bold" style="color: var(--primary);">Hydra 純萃清爽組</div>
+                            <p style="color: var(--gray-mid);">控油化妝水 + 輕透精華 + 水凝乳</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div>
+                                    <span class="text-decoration-line-through me-2"
+                                        style="color: var(--gray-mid);">NT$2,280</span>
+                                    <span class="h5 fw-bold" style="color: var(--primary);">NT$1,680</span>
+                                </div>
+                                <button class="btn btn-sm"
+                                    style="background-color: var(--primary); color: white;">立即選購</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ********************S10 客戶需求表單  ********************-->
+    <section id="s10">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 style="color: var(--primary-mid);">免費肌膚檢測 × 領取小禮物🎁</h2>
+                <p class="text-muted">填寫以下資料，預約您的專屬肌膚諮詢，還有精美小禮物一份送完為止 !</p>
+            </div>
+            <div class="row align-items-start g-5 justify-content-around">
+
+                <div class="col-md-6 text-center ">
+                    <div class="map-title fs-4" style="color: var(--primary-mid); font-weight:900;">STORE LOCATION</div>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.2048660478376!2d120.64201057534886!3d24.164546978390153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d8c96a1a1b9%3A0x1c1b01edf059737c!2z5Y-w5Lit5aSn6YGg55m-!5e0!3m2!1szh-TW!2stw!4v1776671954166!5m2!1szh-TW!2stw"
+                            width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" style="color: var(--primary-mid);">姓名 <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="請輸入您的姓名">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" style="color: var(--primary-mid);">E-mail <span
+                                    class="text-danger">*</span></label>
+                            <input type="email" class="form-control" placeholder="example@email.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" style="color: var(--primary-mid);">聯絡電話 <span
+                                    class="text-danger">*</span></label>
+                            <input type="tel" class="form-control" placeholder="09xx-xxx-xxx">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" style="color: var(--primary-mid);">年齡區間</label>
+                            <select class="form-select">
+                                <option value="" disabled selected>請選擇</option>
+                                <option>18 歲以下</option>
+                                <option>18 – 25 歲</option>
+                                <option>26 – 35 歲</option>
+                                <option>36 – 45 歲</option>
+                                <option>46 歲以上</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" style="color: var(--primary-mid);">您的膚質類型</label>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="form-check">
+                                    <input type="radio" name="skin" class="form-check-input" id="sk1">
+                                    <label class="form-check-label" for="sk1">乾性肌</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="skin" class="form-check-input" id="sk2">
+                                    <label class="form-check-label" for="sk2">油性肌</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="skin" class="form-check-input" id="sk3">
+                                    <label class="form-check-label" for="sk3">混合肌</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="skin" class="form-check-input" id="sk4">
+                                    <label class="form-check-label" for="sk4">敏感肌</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" name="skin" class="form-check-input" id="sk5">
+                                    <label class="form-check-label" for="sk5">不清楚</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold"
+                                style="color: var(--primary-mid);">目前最困擾的肌膚問題（可複選）</label>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="c1">
+                                    <label class="form-check-label" for="c1">暗沉</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="c2">
+                                    <label class="form-check-label" for="c2">痘痘 / 粉刺</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="c3">
+                                    <label class="form-check-label" for="c3">細紋 / 老化</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="c4">
+                                    <label class="form-check-label" for="c4">毛孔粗大</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="c5">
+                                    <label class="form-check-label" for="c5">過敏泛紅</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="c6">
+                                    <label class="form-check-label" for="c6">斑點 / 色素</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold" style="color: var(--primary-mid);">希望預約時段</label>
+                            <select class="form-select">
+                                <option value="" disabled selected>請選擇</option>
+                                <option>平日上午（10:00 – 12:00）</option>
+                                <option>平日下午（13:00 – 17:00）</option>
+                                <option>平日晚間（17:00 – 20:00）</option>
+                                <option>假日上午（10:00 – 12:00）</option>
+                                <option>假日下午（13:00 – 17:00）</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold" style="color: var(--primary-mid);">其他備註或想了解的項目</label>
+                            <textarea class="form-control" rows="3" placeholder="例如：對某些成分過敏、想了解特定療程…"></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-lg btn-submit">
+                                    立即送出，預約領取小禮
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-center text-muted mt-3" style="font-size: 0.85rem;">
+                            ※ 本表單資料僅供預約使用，不作其他用途
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ******************** S11 徵才  ********************-->
+    <section id="s11" class="py-5"
+        style="background-image: url('images/s11-1.jpg'); background-size: cover; background-position: center;">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <div class="section-title-box">
+                    <div class="recruit-bg-text">RECRUIT</div>
+                    <h2 class="main-title">人才招募</h2>
+                    <div style="width: 60px; height: 4px; background: var(--gold); margin: 15px auto;"></div>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-around">
+                <div class="col-md-5">
+                    <div class="info-card rounded-4 shadow-lg">
+                        <div class="card-content">
+                            <span class="badge badge-gold mb-3">JOIN US</span>
+                            <h2 class="job-name mt-2">研發助理一名</h2>
+                            <div class="salary-box fs-5">薪資待遇：NT$ 45,000+</div>
+                            <p class="small opacity-90 mt-4" style="line-height: 1.8;">
+                                協助配方實驗室日常研發工作，包含原料測試、數據記錄與穩定性試驗。<br>
+                                須具備化學、生技或相關科系背景。
+                            </p>
+                        </div>
+                        <a href="#" class="btn btn-outline-gold w-100">詳細內容</a>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="info-card rounded-4 shadow-lg">
+                        <div class="card-content">
+                            <span class="badge badge-gold mb-3">JOIN US</span>
+                            <h2 class="job-name mt-2">品牌業務一名</h2>
+                            <div class="salary-box fs-5">薪資待遇：NT$ 45,000+</div>
+                            <p class="small opacity-90 mt-4" style="line-height: 1.8;">
+                                負責開發美容通路、藥妝店與線上夥伴，推廣品牌理念與產品。<br>
+                                具備護膚產業經驗者優先。
+                            </p>
+                        </div>
+                        <a href="#" class="btn btn-outline-gold w-100">詳細內容</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ********************** s12 友站、社群連結 ********************** -->
+    <section id="s12" class="py-2">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+
+                <ul class="nav d-flex align-items-center mb-0">
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">台灣天然成分協會</a>
+                    </li>
+                    <li class="d-none d-md-block separator">|</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">冷萃科技研發中心</a>
+                    </li>
+                </ul>
+
+                <div class="social-box d-flex align-items-center">
+                    <a href="#" class="text-decoration-none">
+                        <i class="fa-brands fa-square-facebook "></i>
+                    </a>
+                    <a href="#" class="text-decoration-none">
+                        <i class="fa-brands fa-line "></i>
+                    </a>
+                    <a href="#" class="text-decoration-none">
+                        <i class="fa-brands fa-square-x-twitter "></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ********************S13 版權  ********************-->
+    <section id="s13">
+        <div class="container">
+            <nav>
+                <ul class="nav d-flex justify-content-center align-items-center">
+                    <li class="nav-item">
+                        <span class="nav-link copyright">POWER BY WYNN 2026</span>
+                    </li>
+            </nav>
+        </div>
+    </section>
+
+    <!-- regirsterModal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content ">
+                <div class="modal-header " style="background-color: var(--gold-middle);color: var(--gold-dark);">
+                    <h5 class="modal-title fw-900 h4" id="exampleModalLabel">會員註冊</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="h5">會員條款：</div>
+                            <p>一、 會員註冊規範<br>
+                                ※註冊時請提供本人正確、最新及完整的資料。若資料有誤，本網站有權暫停或終止您的帳號。
+                                會員有義務妥善保管帳號與密碼。
+                                ※任何經由該帳號所進行的行為，將視為會員本人之行為。</p>
+                            <p>二、 隱私權保護<br>
+                                ※我們蒐集的個人資料（如姓名、電話、地址、膚質狀況）僅用於訂單處理、客戶服務及品牌內部行銷分析。<br>
+                                ※本網站將遵守相關個資法規，未經您的同意，絕不會將您的資料揭露給無關之第三方</p>
+                            <p>三、 護膚產品使用提醒<br>
+                                ※本網站提供之產品資訊僅供參考。若您具有過敏體質或特殊皮膚疾病，建議使用前諮詢皮膚科醫師。<br>
+                                ※使用產品後若出現紅腫、發癢等不適現象，請立即停用並聯繫我們的專業客服或尋求醫療協助。</p>
+                            <p>四、 購物與退換貨規範<br>
+                                ※當您完成訂購程序後，系統會自動發送確認郵件，但交易是否成立仍以本網站實際出貨通知為準。<br>
+                                ※根據消費者保護法，您享有商品到貨後 7 天鑑賞期。<br>
+                                ※由於護膚品屬於個人衛生用品，除商品本身瑕疵外，一經拆封或使用，恕不接受退換貨。</p>
+                            <p>五、 條款修訂<br>
+                                本網站保有隨時修改本條款之權利，修改後的條款將公佈於網站首頁，不另行個別通知。</p>
+                        </div>
+                        <div class="col-6 mb-6">
+                            <div class="mb-3">
+                                <label for="" class="form-label">帳號：</label>
+                                <input type="text" placeholder="請輸入帳號">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">密碼：</label>
+                                <input type="text" placeholder="請輸入密碼">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">確認密碼：</label>
+                                <input type="text" placeholder="請再次輸入密碼">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">E-mail：</label>
+                                <input type="text" placeholder="請輸入信箱">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" id="agree" type="checkbox">
+                                <label class="form-check-label" for="agree">我同意</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn " style="border: 1px solid var(--gray-line);" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn fw-bold" style="background-color: var(--gold-light);color: var(--gold-dark);border: 1px solid var(--gold-dark)">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- loginModal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: var(--primary-light);color: var(--cream);">
+                    <h5 class="modal-title fw-bold h4" id="exampleModalLabel" >會員登入</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="" class="from-label">帳號：</label>
+                        <input type="text" placeholder="請輸入帳號">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="from-label">密碼：</label>
+                        <input type="text" placeholder="請輸入密碼">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="me-auto text-decoration-non fw-bold text-decoration-none" style="color:var(--gold-line)" data-bs-toggle="modal" 
+                        data-bs-target="#registerModal" >還沒有帳號？</a>
+                    <button type="button" class="btn " style="color: var(--gold-dark);border: 1px solid var(--gold-dark);" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn fw-bold" style="background-color: var(--primary-light);color:var(--cream)">確認</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
+    <script src="js/wow.min.js"></script>
+    <script>new WOW().init();</script>
+    <script>
+        // s01 回頂部按鈕
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.opacity = '1';
+                backToTopBtn.style.visibility = 'visible';
+            } else {
+                backToTopBtn.style.opacity = '0';
+                backToTopBtn.style.visibility = 'hidden';
+            }
+        });
+
+        //  s04 counter
+        const counterUp = window.counterUp.default
+        const callback = entries => {
+            entries.forEach(entry => {
+                const el = entry.target
+                if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                    counterUp(el, {
+                        duration: 2000,
+                        delay: 16,
+                    })
+                    el.classList.add('is-visible')
+                }
+            })
+        }
+
+        const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+        const counters = document.querySelectorAll('.counter')
+        counters.forEach(counter => {
+            IO.observe(counter)
+        })
+
+
+        //  s08 隨機照片
+        $.ajax({
+            url: 'https://randomuser.me/api/?results=4',
+            dataType: 'json',
+            success: function (data) {
+                const results = data.results;
+                const users = [
+                    {
+                        name: '陳小姐',
+                        skin: '敏感肌・使用3個月',
+                        stars: '★★★★★',
+                        review: '第一次用完隔天起床臉不紅了，質地清爽完全不黏膩，連夏天都好推。',
+                        series: 'Verda 純淨守護系列'
+                    },
+                    {
+                        name: '林先生',
+                        skin: '油性肌・使用2個月',
+                        stars: '★★★★★',
+                        review: '毛孔真的有變小，臉也比較不油了。成分表很乾淨讓我很放心。',
+                        series: 'Hydra 純萃清爽系列'
+                    },
+                    {
+                        name: '王媽媽',
+                        skin: '熟齡肌・使用5個月',
+                        stars: '★★★★☆',
+                        review: '法令紋淡化了，臉看起來比較有光澤，老公說我年輕了好幾歲。',
+                        series: 'Aevum 黃金逆時系列'
+                    },
+                    {
+                        name: '吳小姐',
+                        skin: '混合肌・使用1個月',
+                        stars: '★★★★★',
+                        review: 'T字出油兩頰又乾，這款讓我整臉水潤又不悶，是目前用過最均衡的。',
+                        series: 'Tensa 賦活緊緻系列'
+                    }
+                ];
+
+                const container = document.querySelector('#s08 .row');
+                container.innerHTML = '';
+
+                results.forEach(function (user, index) {
+                    const photo = user.picture.large;
+                    const u = users[index];
+
+                    const col = `
+                        <div class="col-sm-6 col-xl-3 mt-3 px-3">
+                            <div class="d-flex align-items-center mb-3">
+                                <img class="usering" src="${photo}" alt="${u.name}">
+                                <div>
+                                    <div class="h4 fw-bold mb-0">${u.name}</div>
+                                    <small class="fs-6" style="color: var(--gray);">${u.skin}</small>
+                                    <div style="color: var(--gold); font-size: 18px;">${u.stars}</div>
+                                </div>
+                            </div>
+                            <p class="fs-5 fw-900" style="color: var(--gold-dark); line-height: 1.6;">${u.review}</p>
+                            <small class="fs-6 fw-bold" style="color: var(--primary-mid);">— ${u.series}</small>
+                        </div>
+                    `;
+                    container.innerHTML += col;
+                });
+            }
+        });
+
+
+    </script>
+</body>
